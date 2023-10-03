@@ -13,6 +13,10 @@ public class Hwtask3 {
         System.out.print("enter num ");
         int num3 = scan.nextInt();
 
+        Math.abs( num1);
+        Math.abs( num2);
+        Math.abs( num3);
+        
         if (num1 < num2) {
             if (num1 < num3) {
                 System.out.println(num1);
