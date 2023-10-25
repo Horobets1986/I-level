@@ -1,4 +1,4 @@
-package org.example.src.ua.horobets.hw5;
+package ua.horobets.hw5;
 
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
