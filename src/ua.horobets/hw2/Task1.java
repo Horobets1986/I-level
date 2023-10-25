@@ -1,13 +1,13 @@
 package ua.horobets.hw2;
+
 /* 2. Заданы плоские декартовы координаты треугольника. Например A(1, 5), B(3, 5), C(6, 7)
 • Найти площадь треугольника и вывести в консоль.*/
 public class Task1 {
     public static void main(String[] args) {
-        triagl(args);
-        System.out.println("S triangle -" + triagl(args));
+        calcArea(args);
+        System.out.println("S triangle -" + calcArea(args));
     }
-
-    public static int triagl(String[] args) {
+    public static int calcArea(String[] args) {
 
         int x1, y1, x2, y2, x3, y3;
 
@@ -23,7 +23,6 @@ public class Task1 {
         double S = (Math.abs(x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2)) / 2);
 
         return (int) S;
-
 
 
     }
