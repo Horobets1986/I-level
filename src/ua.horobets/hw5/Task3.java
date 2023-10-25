@@ -1,4 +1,4 @@
-package org.example.src.ua.horobets.hw5;
+package ua.horobets.hw5;
 
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
@@ -18,8 +18,8 @@ public class Task3 {
     public static void main(String[] args) {
         int[][] num = new int[5][5];
         fill(num);
-       // find(num);
-
+        printArray(num);
+        swap(num);
     }
     public static void fill(int[][] array) {
         for (int i = 0; i < array.length; i++)
@@ -27,11 +27,20 @@ public class Task3 {
             array[i] [j] = ThreadLocalRandom.current().nextInt(1, 10);
         System.out.println(Arrays.deepToString(array));
     }
- /*   public static void find(int[][] array) {
-        int[] mobArray = new int[array.length];
-        for (int i = 1; i < array.length; i++) {
-            mobArray[i] = ;
-            System.out.println(Arrays.deepToString(array));
+    public static void printArray(int[][] array) {
+        for (int i = 0; i < array.length; i++)
+            for (int j = 0; j < array.length; j++)
+                array[i][j] = ThreadLocalRandom.current().nextInt(1, 10);
+        System.out.println(Arrays.deepToString(array));
+    }
+    public static void swap(int[][] array) {
+        int[][] swap = new int[array[0].length][array.length];
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                swap[j][i] = array[i][j];
+            }
         }
-    }*/
+        printArray(swap);
+    }
 }
+

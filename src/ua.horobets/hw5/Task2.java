@@ -1,6 +1,7 @@
-package org.example.src.ua.horobets.hw5;
+package ua.horobets.hw5;
 
 import java.util.Arrays;
+import java.util.concurrent.ThreadLocalRandom;
 
 /* Проверить, заданный массив на упорядоченность по убыванию, т. е. определить, верно ли,
 что каждый его элемент, начиная со второго, не больше предыдущего.
@@ -8,20 +9,34 @@ import java.util.Arrays;
  */
 public class Task2 {
     public static void main(String[] args) {
-        int[] num = {20, 30, 40, 15, 90, 45};
-        search(num);
-        System.out.println(num);
+        int[] num = new int[8];
 
+        array(num);
+        search(num);
     }
 
-    public static int search(int[] array) {
-        int min = array[0];
-        for (int i = 1; i < array.length; i++) {
-            if (min < array[i]) ;
-            System.out.println(min);
-            //return array[i];
+    public static void array(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            array[i] = ThreadLocalRandom.current().nextInt(1, 10);
+            System.out.println(Arrays.toString(array));
+        }
+    }
+
+        public static boolean search (int[] array){
+            boolean num = true;
+            for (int i = 0; i < array.length - 1; i++) {
+                if (array[i + 1] >= array[i]) {
+                    num = false;
+                    break;
+                }
+            }
+
+            if (num) {
+                System.out.println("sorted");
+            } else {
+                System.out.println("not sorted");
+            } return num;
+
         }
 
-        return min;
     }
-}

@@ -1,4 +1,4 @@
-package org.example.src.ua.horobets.hw5;
+package ua.horobets.hw5;
 
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
@@ -14,8 +14,10 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Task1 {
     public static void main(String[] args) {
         int[][] num = new int[4][4];
-        // printArray(num);
         fill(num);
+        changeLine(num);
+        printArray(num);
+
     }
     public static void printArray(int[][] array) {
         for (int i = 0; i < array.length; i++)
@@ -23,35 +25,22 @@ public class Task1 {
                 array[i][j] = ThreadLocalRandom.current().nextInt(1, 10);
         System.out.println(Arrays.deepToString(array));
     }
-    public static int [][] fill(int[][] printArray) {
-        int a =  printArray;
+    public static void fill(int[][] num) {
+        int a = 1;
         for (int i = 0; i < num.length; i++) {
             for (int j = 0; j < num.length; j++) {
-                num[i][j] = j + 1;
+                num[i][j] = a + 1;
+                System.out.println(Arrays.deepToString(num));
             }
         }
-        for (int anAnArr : num[0]) {
-            System.out.print(anAnArr + " ");
-        }
-        System.out.println();
-        for (int anAnArr : num[1]) {
-            System.out.print(anAnArr *-1 + " ");
-        }
-        System.out.println();
-        for (int anAnArr : num[2]) {
-            System.out.print(anAnArr + " ");
-        }
-        System.out.println();
-        for (int anAnArr : num[3]) {
-            System.out.print(anAnArr *-1+ " ");
-        }
-        System.out.println();
-        for (int anAnArr : num[4]) {
-            System.out.print(anAnArr + " ");
-        }
-        return num;
     }
-
-
-
+    public static void changeLine(int[][] num) {
+        for (int i = 0; i < num.length; i++) {
+            for (int j = 0; j < num[i].length; j++) {
+                if (i % 2 != 0) {
+                    num[i][j] *= (-1);
+                }
+            }
+        }
+    }
 }

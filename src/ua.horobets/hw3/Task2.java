@@ -10,15 +10,10 @@ public class Task2 {
 
 
     public static void main(String[] args) {
-
         Scanner scan = new Scanner(System.in);
         System.out.print("enter text ");
         String str = scan.nextLine();
-
-
         String[] word = str.split("\\s+");
         System.out.println("word is - " + word.length);
-
     }
-
 }
