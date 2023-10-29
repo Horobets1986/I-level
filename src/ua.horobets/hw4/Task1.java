@@ -15,6 +15,8 @@ public class Task1 {
         System.out.println(Arrays.toString(num));
         arithmetic(num);
         geometr(num);
+        System.out.println("the arithmetic mean: " + arithmetic(num));
+        System.out.println("the geometr mean: " + geometr(num));
     }
 
     public static void fill(int[] array) {
@@ -27,18 +29,15 @@ public class Task1 {
         for (double x : array) {
             sum += x;
         }
-        System.out.println("the arithmetic mean: " + sum / array.length);
-        return 0;
+        return (int) sum / array.length;
     }
 
-    public static void geometr(int[] array) {
-        double p = 0;
-        double x = 1;
-        for (int i = 0; i < array.length; i++) {
-            x *= array[i];
+    public static double geometr(int[] array) {
+        double x = 1.0;
+        for (double p : array) {
+            x *= p;
         }
-        System.out.println("the geometr mean: " + Math.sqrt(x));
-
+        return Math.pow(x, 1.0 / array.length);
     }
 }
 

@@ -12,8 +12,7 @@ public class Task2 {
         fill(num);
         System.out.println(Arrays.toString(num));
         find(num);
-        System.out.print(Arrays.toString(num));
-
+        System.out.print(find(num));
     }
 
     public static void fill(int[] array) {
@@ -22,12 +21,19 @@ public class Task2 {
     }
 
     public static int find(int[] array) {
-        int a = 0;
+        int a = (array.length);
         for (int i = 1; i < array.length; i++) {
-            if (array[i] < a) ;
-            if ((array[i] % 2 != 0) || (array[i] % 3 != 0) || (array[i] % 7 != 0)) ;
-            if (array[i] == array.length) ;
-            a++;
+            boolean isPrime = true;
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) {
+                // System.out.println(i);
+            }
+
         }
         return a;
     }
