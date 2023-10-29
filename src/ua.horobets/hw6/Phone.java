@@ -42,7 +42,7 @@ public class Phone {                                          //a
         Phone a = new Phone(0635555, "nokia", 150);
         a.number = 0635555;
         a.model = "nokia";
-        a.weight = 150.5;
+        a.weight = 150;
         System.out.println(a);
         a.receiveCall("nokia");
         a.getNumber(0635555);
@@ -58,7 +58,7 @@ public class Phone {                                          //a
         Phone c = new Phone(8795116, "sony", 120);
         c.number = 8795116;
         c.model = "sony";
-        c.weight = 100;
+        c.weight = 120;
         System.out.println(b);
         c.receiveCall("sony");
         c.getNumber(5165116);
@@ -66,7 +66,7 @@ public class Phone {                                          //a
 
     @Override
     public String toString() {
-        return "Телефон-"+" number-" + number +" model-" + model + '\'' + " weight-" + weight ;
+        return "Телефон-"+" number-" + number +" model-" + model  + " weight-" + weight ;
     }
 
     public void receiveCall(String call) {
