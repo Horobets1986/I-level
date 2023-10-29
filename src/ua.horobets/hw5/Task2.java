@@ -10,16 +10,17 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Task2 {
     public static void main(String[] args) {
         int[] num = new int[8];
-
         array(num);
         search(num);
+        System.out.println(Boolean.parseBoolean(""));
+
     }
 
     public static void array(int[] array) {
         for (int i = 0; i < array.length; i++) {
             array[i] = ThreadLocalRandom.current().nextInt(1, 10);
-            System.out.println(Arrays.toString(array));
         }
+        System.out.println(Arrays.toString(array));
     }
 
         public static boolean search (int[] array){
@@ -30,13 +31,9 @@ public class Task2 {
                     break;
                 }
             }
-
             if (num) {
-                System.out.println("sorted");
+                return Boolean.parseBoolean("true");
             } else {
-                System.out.println("not sorted");
-            } return num;
-
+            } return Boolean.parseBoolean("false");
         }
-
     }

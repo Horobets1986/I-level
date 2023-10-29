@@ -13,25 +13,20 @@ import java.util.concurrent.ThreadLocalRandom;
 *Передать массив в метод, заполнить данный массив */
 public class Task1 {
     public static void main(String[] args) {
-        int[][] num = new int[4][4];
+        int[][] num = new int[4][3];
         fill(num);
         changeLine(num);
-        printArray(num);
+        print(num);
 
     }
-    public static void printArray(int[][] array) {
-        for (int i = 0; i < array.length; i++)
-            for (int j = 0; j < array.length; j++)
-                array[i][j] = ThreadLocalRandom.current().nextInt(1, 10);
-        System.out.println(Arrays.deepToString(array));
-    }
+
     public static void fill(int[][] num) {
         int a = 1;
         for (int i = 0; i < num.length; i++) {
-            for (int j = 0; j < num.length; j++) {
-                num[i][j] = a + 1;
-                System.out.println(Arrays.deepToString(num));
+            for (int j = 0; j < num[i].length; j++) {
+                num[i][j] = a++;
             }
+            System.out.println(Arrays.toString(num[i]));
         }
     }
     public static void changeLine(int[][] num) {
@@ -41,6 +36,11 @@ public class Task1 {
                     num[i][j] *= (-1);
                 }
             }
+        }
+    }
+    public static void print(int[][] num) {
+        for (int i = 0; i < num.length; i++) {
+            System.out.println(Arrays.toString(num[i]));
         }
     }
 }

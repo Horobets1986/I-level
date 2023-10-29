@@ -16,31 +16,26 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class Task3 {
     public static void main(String[] args) {
-        int[][] num = new int[5][5];
+        int[][] num = new int[2][2];
         fill(num);
-        printArray(num);
         swap(num);
+        System.out.println(Arrays.toString(swap(num)));
     }
+
     public static void fill(int[][] array) {
         for (int i = 0; i < array.length; i++)
             for (int j = 0; j < array.length; j++)
-            array[i] [j] = ThreadLocalRandom.current().nextInt(1, 10);
-        System.out.println(Arrays.deepToString(array));
-    }
-    public static void printArray(int[][] array) {
-        for (int i = 0; i < array.length; i++)
-            for (int j = 0; j < array.length; j++)
                 array[i][j] = ThreadLocalRandom.current().nextInt(1, 10);
-        System.out.println(Arrays.deepToString(array));
     }
-    public static void swap(int[][] array) {
+
+    public static int[][] swap(int[][] array) {
         int[][] swap = new int[array[0].length][array.length];
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length; j++) {
                 swap[j][i] = array[i][j];
             }
         }
-        printArray(swap);
+        return (swap);
     }
 }
 
