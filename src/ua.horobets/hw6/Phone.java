@@ -19,52 +19,63 @@ getNumber – возвращает номер телефона. Вызвать �
 каждого из объектов.
  */
 public class Phone {                                          //a
-    public boolean number;
-    public String model;
-    public int weight;
+    long number;
+   String model;
+    double weight;
 
-    public Phone(boolean number, String model, int weight) {
+     Phone(long number, String model, int weight) {
         this.number = number;
         this.model = model;
         this.weight = weight;
     }
 
-   /* public Phone(boolean number, String model) {                   //в
+    Phone(long number, String model) {                   //в
         this.number = number;
         this.model = model;
     }
 
-    public Phone() {                                           //г
-    }  */
-
-  /*  public static void main(String[] args) {
-
-       Phone phoneA = new Phone(number"0635568458", model"nokia", weight"150");  //д
-       Phone phoneB = new Phone(number"0635698458", model"siemens", weight"100");
-       Phone phoneC = new Phone(number"0665568436", model"sony", weight"120");
+     Phone() {                                           //г
     }
 
-   /* public void Phones(boolean number, String model, int weight) {           //ж
-        Phone a = new Phone();
-        a.number = 0635568458;
-        a.model = nokia;
-        a.weight = 150;
+    public static void main(String[] args) {
 
-        Phone b = new Phone();
-        b.number = 0635698458;
-        b.model = siemens;
+        Phone a = new Phone(0635555, "nokia", 150);
+        a.number = 0635555;
+        a.model = "nokia";
+        a.weight = 150.5;
+        System.out.println(a);
+        a.receiveCall("nokia");
+        a.getNumber(0635555);
+
+        Phone b = new Phone(5165116, "siemens", 100);
+        b.number = 5165116;
+        b.model = "siemens";
         b.weight = 100;
+        System.out.println(b);
+        b.receiveCall("siemens");
+        b.getNumber(5165116);
 
-        Phone c = new Phone();
-        c.number = 0665568436;
-        c.model = sony;
-        c.weight = 120;
-  }*/
-  /*  public void getValyes(){
-        String info = "number:" +"model:" +"weight" + "\n";
+        Phone c = new Phone(8795116, "sony", 120);
+        c.number = 8795116;
+        c.model = "sony";
+        c.weight = 100;
+        System.out.println(b);
+        c.receiveCall("sony");
+        c.getNumber(5165116);
     }
-    System.out.println(a.getValyes);
-    System.out.println(b.getValyes);
-    System.out.println(c.getValyes);
-*/
+
+    @Override
+    public String toString() {
+        return "Телефон-"+" number-" + number +" model-" + model + '\'' + " weight-" + weight ;
+    }
+
+    public void receiveCall(String call) {
+        this.model = call;
+        System.out.println("Телефон " + call);
+    }
+
+    public void getNumber(int numberPhone) {
+        this.number = numberPhone;
+        System.out.println("Номер телефона : " + numberPhone);
+    }
 }
