@@ -10,31 +10,35 @@ public class Task2 {
     public static void main(String[] args) {
         int[] num = new int[1000];
         fill(num);
-        System.out.println(Arrays.toString(num));
-        find(num);
-        System.out.print(find(num));
+        System.out.println(Arrays.toString(num) + "array list");
+        System.out.println(countPrime(num) + "primes numbers are");
     }
 
     public static void fill(int[] array) {
         for (int i = 0; i < array.length; i++)
-            array[i] = ThreadLocalRandom.current().nextInt(1, 10000);
+            array[i] = ThreadLocalRandom.current().nextInt(1, 10);
     }
 
-    public static int find(int[] array) {
-        int a = (array.length);
-        for (int i = 1; i < array.length; i++) {
-            boolean isPrime = true;
-            for (int j = 2; j < i; j++) {
-                if (i % j == 0) {
-                    isPrime = false;
-                    break;
-                }
-            }
-            if (isPrime) {
-                // System.out.println(i);
-            }
-
+    public static boolean isPrime(int number) {
+        boolean prime = true;
+        if (number < 2) {
+            prime = false;
         }
-        return a;
+        for (int i = 2; i < number; i++) {
+            if (number % i == 0) {
+                prime = false;
+            }
+        }
+        return prime;
+    }
+
+    public static int countPrime(int[] set) {
+        int counter = 0;
+        for (int i = 0; i < set.length; i++) {
+            if (isPrime(set[i])) {
+                counter++;
+            }
+        }
+        return counter;
     }
 }

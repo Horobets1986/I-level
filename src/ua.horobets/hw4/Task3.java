@@ -24,7 +24,6 @@ public class Task3 {
         int[] mobArray = new int[array.length];
         for (int i = 1; i < array.length; i++) {
             mobArray[i] = (array[i] % 2 == 0) ? 0 : array[i];
-            // System.out.print(mobArray + " ");
         }return mobArray;
     }
 }
