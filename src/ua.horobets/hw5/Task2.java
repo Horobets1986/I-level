@@ -12,7 +12,7 @@ public class Task2 {
         int[] num = new int[8];
         array(num);
         search(num);
-        System.out.println(Boolean.parseBoolean(""));
+        System.out.println(search(num));
 
     }
 
@@ -30,10 +30,7 @@ public class Task2 {
                     num = false;
                     break;
                 }
-            }
-            if (num) {
-                return Boolean.parseBoolean("true");
-            } else {
-            } return Boolean.parseBoolean("false");
+
+            } return num;
         }
     }

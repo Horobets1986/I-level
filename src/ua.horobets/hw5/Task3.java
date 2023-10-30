@@ -18,7 +18,6 @@ public class Task3 {
     public static void main(String[] args) {
         int[][] num = new int[2][2];
         fill(num);
-        swap(num);
         System.out.println(Arrays.toString(swap(num)));
     }
 
