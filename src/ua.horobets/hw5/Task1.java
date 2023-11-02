@@ -24,16 +24,15 @@ public class Task1 {
         for (int i = 0; i < num.length; i++) {
             for (int j = 0; j < num[i].length; j++) {
                 num[i][j] = a++;
-            }
-            System.out.println(Arrays.toString(num[i]));
-
-            for (int j = 0; j < num[i].length; j++) {
                 if (i % 2 != 0) {
                     num[i][j] *= (-1);
                 }
+
+
             }
         }
     }
+
 
     public static void print(int[][] num) {
         for (int i = 0; i < num.length; i++) {
