@@ -11,7 +11,6 @@ public class Task2 {
     public static void main(String[] args) {
         int[] num = new int[8];
         array(num);
-        search(num);
         System.out.println(search(num));
 
     }
