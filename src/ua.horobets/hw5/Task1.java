@@ -16,7 +16,6 @@ public class Task1 {
         int[][] num = new int[4][3];
         fill(num);
         print(num);
-
     }
 
     public static void fill(int[][] num) {
@@ -27,12 +26,9 @@ public class Task1 {
                 if (i % 2 != 0) {
                     num[i][j] *= (-1);
                 }
-
-
             }
         }
     }
-
 
     public static void print(int[][] num) {
         for (int i = 0; i < num.length; i++) {
