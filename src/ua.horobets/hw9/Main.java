@@ -25,20 +25,21 @@ public class Main {
         System.out.println("Triangle perimetr-" + Triangle.perimetr());
         System.out.println("Triangle area-" + Triangle.area());
 
-        System.out.println();
-        biggestArea(Circle, Square, Triangle);
-
-
-    }
-
-    protected static void biggestArea(Figure C, Figure S, Figure T) {
-        if (C.area() >= S.area() && C.area() >= T.area()) {
-            System.out.println("biggest Circle area-" + C.area());
-        } else if (S.area() >= T.area()) {
-            System.out.println("biggest Square area-" + S.area());
-        } else {
-            System.out.println("biggest Triangle area-" + T.area());
-
+        Figure maxFigure = bigestAreaFigure(Circle, Square, Triangle);
+        System.out.println("bigest area-"+ maxFigure.area());
         }
+ private static Figure bigestAreaFigure (Figure... figures) {
+            Figure maxFigure = null;
+            double maxArea = 0.0;
+            for (Figure figure : figures) {
+                double area = figure.area();
+                if (area > maxArea) {
+                    maxArea = area;
+                    maxFigure = figure;
+                }
+            }
+            return maxFigure;
+
+
     }
 }
