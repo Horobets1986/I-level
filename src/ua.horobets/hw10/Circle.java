@@ -3,11 +3,9 @@ package ua.horobets.hw10;
 public class Circle extends Figure {
     private double radius;
 
-    public Circle(double radius) throws InvalidFigureException {
+    public Circle(double radius)  {
 
-        if (radius < 0) {
-            throw new InvalidFigureException("Radius cant be negative!");
-        }
+
         this.radius = radius;
     }
 

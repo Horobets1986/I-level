@@ -3,10 +3,8 @@ package ua.horobets.hw10;
 public class Square extends Figure {
     private double side;
 
-    public Square(double side) throws InvalidFigureException {
-        if (side < 0) {
-            throw new InvalidFigureException("Side cant be negative!");
-        }
+    public Square(double side)   {
+
         this.side = side;
     }
 
