@@ -16,8 +16,7 @@ public class Main {
                 radius = scanner.nextInt();
                 if (radius == 0) {
                     throw new InvalidFigureException(" cannot be 0");
-                } else if (radius < 0) {
-                    throw new InvalidFigureException(" Size must be <0 ");
+
                 } else break;
             } catch (Exception e) {
                 System.out.println(e.getMessage());
