@@ -5,11 +5,10 @@ public class Triangle extends Figure {
     private double bSide;
     private double cSide;
 
-    public Triangle(double sideA, double sideB, double sideC)   {
-
-        this.aSide = sideA;
-        this.bSide = sideB;
-        this.cSide = sideC;
+    public Triangle(double aSide, double bSide, double cSide) {
+        this.aSide = aSide;
+        this.bSide = bSide;
+        this.cSide = cSide;
     }
 
     @Override
