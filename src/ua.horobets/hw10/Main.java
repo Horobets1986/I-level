@@ -31,7 +31,7 @@ public class Main {
         while (true) {
             try {
                 if (side < 0) {
-                    throw new InvalidFigureException(" Size must be <0 ");
+                    throw new InvalidFigureException(" cannot be 0 ");
                 } else break;
             } catch (Exception e) {
                 System.out.println(e.getMessage());
@@ -47,7 +47,7 @@ public class Main {
             while (true) {
                 try {
                     if ((sideA + sideB < sideC) || (sideA + sideC < sideB) || (sideB + sideC < sideA)) {
-                        throw new InvalidFigureException(" Triangle does exist");
+                        throw new InvalidFigureException(" Such a triangle cannot exist");
                     } else break;
 
                 } catch (InvalidFigureException e) {
