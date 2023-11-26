@@ -34,25 +34,25 @@ public class Main {
         List<Figure> figure = new ArrayList<>(Arrays.asList(circle, circle1, square, square1, triangle, triangle1));
 
         double dif = 8;
-        System.out.println(findFigureFirst(figure, dif));
-        System.out.println(findFigureSecond(figure));
+        System.out.println(findMinLargedFigure(figure, dif));
+        System.out.println(findAreaTwicePerimeterFigure(figure));
     }
 
-    private static List<Figure> findFigureFirst(List<Figure> figures, double dif) {
+    private static List<Figure> findMinLargedFigure(List<Figure> figures, double dif) {
         return figures.stream()
-                .filter(figure -> figure.area() > findMin(figures) + dif)
+                .filter(figure -> figure.area() == findMinFigure(figures) + dif)
                 .collect(Collectors.toList());
 
     }
 
-    private static double findMin(List<Figure> figures) {
+    private static double findMinFigure(List<Figure> figures) {
         return figures.stream()
                 .mapToDouble(Figure::area)
                 .min()
                 .orElse(0.0);
     }
 
-    private static List<Figure> findFigureSecond(List<Figure> figures) {
+    private static List<Figure> findAreaTwicePerimeterFigure(List<Figure> figures) {
         return figures.stream()
                 .filter(figure -> figure.area() == 2 * figure.perimetr())
                 .collect(Collectors.toList());
