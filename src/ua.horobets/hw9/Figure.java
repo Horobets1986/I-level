@@ -11,13 +11,8 @@ package ua.horobets.hw9;
 площі за допомогою добутку базової висоти
  */
 public abstract class Figure {
-    public Figure(double perimetr, double area) {
+       public Figure() {
     }
-
-    public Figure() {
-    }
-
     public abstract double perimetr();
-
     public abstract double area();
 }

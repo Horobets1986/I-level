@@ -21,10 +21,12 @@ public class Triangle extends Figure {
         double halfPerim = perimetr() / 2;
         return Math.sqrt(halfPerim * (halfPerim - aSide) * (halfPerim - bSide) * (halfPerim - cSide));
     }
-    public double area(double aSide, double bSide, double sin) {
+    public double area(double sin) {
+
         return 0.5*aSide*bSide*sin;
     }
-    public double area(double cSide, double height){
+    public double area(float height){
+
         return 0.5*cSide*height;
     }
 }
