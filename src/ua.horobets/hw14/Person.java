@@ -2,50 +2,45 @@ package ua.horobets.hw14;
 
 import java.io.Serializable;
 
-class Person implements  Comparable<Person> {
+class Person implements Comparable<Person> {
 
     private String name;
     private String secondName;
-    private double salary;
+    private int salary;
     private int age;
 
-    Person(String n, String sn, int a, double s) {
-        this.name = n;
-        this.secondName = sn;
-        this.salary = s;
-        this.age = a;
+    public Person(String name) {
+        this.name = name;
     }
 
-    String getName() {
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getName() {
         return name;
     }
 
-    String getsecondName() {
+    public String getSecondName() {
         return secondName;
     }
 
-    double getsalary() {
+    public int getSalary() {
         return salary;
     }
 
-    int getAge() {
+    public int getAge() {
         return age;
     }
-    String setName() {
-        return name;
-    }
 
-    String setsecondName() {
-        return secondName;
-    }
-
-    double setsalary() {
-        return salary;
-    }
-
-    int setAge() {
-        return age;
-    }
     @Override
     public int compareTo(Person other) {
         int cmp = this.name.compareTo(other.name);
