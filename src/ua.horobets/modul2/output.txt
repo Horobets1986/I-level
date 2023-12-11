@@ -1,0 +1,5 @@
+Filtered products: [Milk|2|1.5, Cucumbers|5|0.8, Bread|1|1.0, Cheese|3|2.5, Chicken|2|5.0]
+Total quantity: 29
+Average price: 1.74
+Sorted products: [Chicken|2|5.0, Cheese|3|2.5, Milk|2|1.5, Apples|6|1.2, Bread|1|1.0, Cucumbers|5|0.8, Eggs|10|0.2]
+Total cost: 34.7
