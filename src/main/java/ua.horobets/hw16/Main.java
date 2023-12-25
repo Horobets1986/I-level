@@ -22,12 +22,12 @@ public class Main {
                     " values ('Saia', 'Goroa',null )";
             statement.executeUpdate(createNewPerson);
 
-            String pers = "SELECT * from public.employee";
-            ResultSet persSet = statement.executeQuery(pers);
-            while (persSet.next()) {
-                String lustName = persSet.getString("last_name");
-                String firstName = persSet.getString("first_name");
-                String contact = persSet.getString("contact_id");
+            String i = "SELECT * from public.employee";
+            ResultSet iSet = statement.executeQuery(i);
+            while (iSet.next()) {
+                String lustName = iSet.getString("last_name");
+                String firstName = iSet.getString("first_name");
+                String contact = iSet.getString("contact_id");
                 System.out.println(firstName + " " + lustName + " has contact_id # " + contact);
             }
 
