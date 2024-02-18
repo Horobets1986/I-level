@@ -1,7 +1,7 @@
 package ua.horobets.hw23.servlet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-
+import ua.horobets.hw23.util.ContextPath;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -30,10 +30,8 @@ public class CarServlet extends HttpServlet {
             String json = objectMapper.writeValueAsString(allCars);
             resp.getWriter().println(json);
         } else {
-            String[] pathParts = contextPath.split("/");
-            if (pathParts.length == 2) {
                 try {
-                    int carId = Integer.parseInt(pathParts[1]);
+                    int carId = ContextPath.idFromPath(contextPath);
                     Car car = carDao.getById(carId);
                     if (car != null) {
                         String json = objectMapper.writeValueAsString(car);
@@ -48,7 +46,7 @@ public class CarServlet extends HttpServlet {
                 }
             } else {
                 resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-                resp.getWriter().println("Invalid path format");
+                resp.getWriter().println("Invalid id format");
             }
         }
     }
@@ -69,13 +67,11 @@ public class CarServlet extends HttpServlet {
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String contextPath = req.getRequestURI();
-        if (contextPath != null && contextPath.startsWith("/car/")) {
+        if (contextPath != null && contextPath.startsWith("/")) {
             try {
-                int carId = Integer.parseInt(contextPath.substring("/car/".length()));
+                int carId = ContextPath.idFromPath(contextPath);
 
-                boolean isCarInList = carDao.getAllCar().stream().anyMatch(car -> car.getId() == carId);
-
-                if (isCarInList) {
+                 if (carToDelete != null) {
                     carDao.deleteById(carId);
                     resp.setStatus(HttpServletResponse.SC_OK);
                     resp.getWriter().println("The car with ID " + carId + " was deleted.");
@@ -92,4 +88,3 @@ public class CarServlet extends HttpServlet {
             resp.getWriter().println("Invalid format path.");
         }
     }
-}
