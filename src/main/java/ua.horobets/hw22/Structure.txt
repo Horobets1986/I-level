@@ -1,0 +1,25 @@
+У HTTP-протоколі визначені такі методи запитів, як GET, HEAD, PUT, DELETE. TRACE, OPTIONS і CONNECT.
+ Найбільш часто використовуваними методами є GET і POST.
+
+Метод GET
+Метод GET є найпростішим методом запиту. Він використовується при формуванні запиту до web-серверу,
+ коли користувач вводить URL в адресний рядок браузера, переходить за посиланням або вибирає одну з 
+закладок на раніше відвідувані сторінки.
+/login-check.php?argument1=value1&argument2=value2
+Синтаксис коду
+<form  method="get">
+     First name: <input type="text" placeholder="Your name"><br/>
+     <input type="submit" value="Submit">
+</form>
+
+Метод POST
+Основна відмінність між методами GET і POST полягає в тому, що POST-запити мають тіло: деякий зміст,
+ яке слід за блоком заголовків і відокремлене від нього символом нового рядка.
+POST /login-check.php HTTP/1.1
+Host: w3docs.com
+argument1=value1&argument2=value2
+Синтаксис коду
+<form  method="post">
+     First name: <input type="text" placeholder="Your name"><br/>
+     <input type="submit" value="Submit">
+</form>
